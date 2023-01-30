@@ -6,6 +6,13 @@ class MathController < ApplicationController
   end
 
   def add_results
+
+    @first = params.fetch("addnum_1").to_f
+
+    @second = params.fetch("addnum_2").to_f
+
+    @result = @second + @first
+  
     render({ :template => "math_templates/addition.html.erb"} )
 
   end
@@ -18,12 +25,12 @@ class MathController < ApplicationController
 
   def subtract_results
 
-      @first = params.fetch("first_num")
+      @first = params.fetch("first_num").to_f
 
-      @second = params.fetch("second_num")
+      @second = params.fetch("second_num").to_f
 
-      @result = @first - @second
-
+      @result = @second - @first
+    
       render({ :template => "math_templates/subtraction.html.erb"} )
 
 
@@ -35,6 +42,13 @@ class MathController < ApplicationController
   end
 
   def multiply_results
+
+    @first = params.fetch("multiplynum_1").to_f
+
+    @second = params.fetch("multiplynum_2").to_f
+
+    @result = @second * @first
+
     render({ :template => "math_templates/multiplication.html.erb"} )
 
   end
@@ -45,6 +59,13 @@ class MathController < ApplicationController
   end
 
   def divide_results
+
+    @first = params.fetch("divisionnum_1").to_f
+
+    @second = params.fetch("divisionnum_2").to_f
+
+    @result = @first / @second
+
     render({ :template => "math_templates/division.html.erb"} )
 
   end
